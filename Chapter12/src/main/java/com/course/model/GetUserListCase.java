@@ -4,7 +4,7 @@ package com.course.model;
 import lombok.Data;
 
 @Data
-public class GetUserList {
+public class GetUserListCase {
 
     private String userName;
     private String age;
