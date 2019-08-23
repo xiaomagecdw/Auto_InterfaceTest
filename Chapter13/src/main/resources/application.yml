@@ -1,0 +1,20 @@
+server:
+  port: 8889
+
+logging:
+  path: logs
+  file: systemoutlog.log
+
+spring:
+  application:
+    name: userManager
+    datasource:
+      dirver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://192.168.96.138:3306/course
+      username: root
+      password: password
+
+mybatis:
+  type-aliases-package: com.course.model
+  mapper-locations:
+    - mapper/*
