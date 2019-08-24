@@ -8,11 +8,11 @@ logging:
 spring:
   application:
     name: userManager
-    datasource:
-      dirver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://192.168.96.138:3306/course
-      username: root
-      password: password
+  datasource:
+    dirver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.96.138:3306/course?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: password
 
 mybatis:
   type-aliases-package: com.course.model
