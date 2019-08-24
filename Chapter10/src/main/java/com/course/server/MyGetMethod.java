@@ -15,9 +15,10 @@ import java.util.Objects;
 
 @RestController
 @Api(value = "/", description = "这是我全部的get方法")
+@RequestMapping("v1")
 public class MyGetMethod {
 
-    @RequestMapping(value = "getCookies", method = RequestMethod.GET)
+    @RequestMapping(value = "/getCookies", method = RequestMethod.GET)
     @ApiOperation(value = "通过这方法可以回去cookies", httpMethod = "GET")
     public String getCookies(HttpServletResponse response){
 
