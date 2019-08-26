@@ -22,7 +22,31 @@
         select * from getuserlistcase where id=#{id}
     </select>
     <!--获取更新用户信息case-->
-    <select id="updateUserInfoCase" parameterType="Integer" resultType="com.course.model.updateUserInfoCase">
+    <select id="updateUserInfoCase" parameterType="Integer" resultType="com.course.model.UpdateUserInfoCase">
         select * from updateuserinfocase where id=#{id}
+    </select>
+
+    <!--获取用户信息-->
+    <select id="getUserInfo" parameterType="com.course.model.GetUserInfoCase" resultType="com.course.model.User">
+        select * from user where id=#{id}
+    </select>
+    <!--获取用户列表-->
+    <select id="getUserList" parameterType="com.course.model.GetUserListCase" resultType="com.course.model.User">
+        select * from  user
+        <trim prefix="where" prefixOverrides="and">
+            <if test="null != userName and '' != userName">
+            and userName=${userName}
+            </if>
+            <if test="null != age and '' != age">
+                and age=${age}
+            </if>
+            <if test="null != sex and '' != sex">
+                and sex=${sex}
+            </if>
+        </trim>
+    </select>
+    <!--获取更新之后的数据-->
+    <select id="getUpdateUserInfo" parameterType="com.course.model.UpdateUserInfoCase" resultType="com.course.model.User">
+        select * from  user
     </select>
 </mapper>
