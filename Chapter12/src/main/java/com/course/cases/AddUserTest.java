@@ -2,7 +2,6 @@ package com.course.cases;
 
 import com.course.config.TestConfig;
 import com.course.model.AddUserCase;
-import com.course.model.User;
 import com.course.utils.DatabaseUtil;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -24,14 +23,15 @@ public class AddUserTest {
         AddUserCase addUserCase = session.selectOne("addUserCase",1);
         System.out.println(addUserCase.toString());
         System.out.println(TestConfig.addUserUrl);
+        System.out.println(addUserCase.getExpected());
 
         //发请求，获取结果
         String result = getResult(addUserCase);
 
         //验证返回结果
-        User user = session.selectOne("addUser",addUserCase);
+//        User user = session.selectOne("addUser",addUserCase);
 
-        System.out.println(user.toString());
+//        System.out.println(user.toString());
         Assert.assertEquals(addUserCase.getExpected(),result);
 
     }
@@ -45,7 +45,7 @@ public class AddUserTest {
         param.put("age",addUserCase.getAge());
         param.put("sex",addUserCase.getSex());
         param.put("permission",addUserCase.getPermission());
-        param.put("isDelete",addUserCase.getIsDelete());
+        param.put("isDeleted",addUserCase.getIsDeleted());
 
         //设置头信息
         post.setHeader("content-type","application/json");
@@ -62,4 +62,6 @@ public class AddUserTest {
 
         return result;
     }
+
+
 }

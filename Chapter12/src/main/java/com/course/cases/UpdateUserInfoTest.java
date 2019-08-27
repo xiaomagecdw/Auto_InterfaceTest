@@ -60,7 +60,7 @@ public class UpdateUserInfoTest {
         param.put("age",updateUserInfoCase.getAge());
         param.put("sex",updateUserInfoCase.getSex());
         param.put("permission",updateUserInfoCase.getPermission());
-        param.put("isDelete",updateUserInfoCase.getIsDelete());
+        param.put("isDeleted",updateUserInfoCase.getIsDeleted());
 
         post.setHeader("content-type", "application/json");
 
@@ -71,6 +71,7 @@ public class UpdateUserInfoTest {
 
         String result;
         HttpResponse response = TestConfig.defaultHttpClient.execute(post);
+
         result = EntityUtils.toString(response.getEntity(), "utf-8");
 
         return Integer.parseInt(result);

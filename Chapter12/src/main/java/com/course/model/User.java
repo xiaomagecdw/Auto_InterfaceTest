@@ -13,7 +13,7 @@ public class User {
     private String age;
     private String sex;
     private String permission;
-    private String isDelete;
+    private String isDeleted;
 
     public  String toString(){
         return(
@@ -23,7 +23,7 @@ public class User {
                         "age:"+age+","+
                         "sex:"+sex+","+
                         "permission:"+permission+","+
-                        "isDelete:"+isDelete+"}"
+                        "isDeleted:"+isDeleted+"}"
         );
 
     }

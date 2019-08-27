@@ -31,10 +31,13 @@ public class GetUserInfoTest {
         JSONArray resultJson = getJsonResult(getUserInfoCase);
 
         User user = session.selectOne(getUserInfoCase.getExpected(),getUserInfoCase);
+        System.out.println("自己查库获取用户信息:"+user.toString());
 
         List userList = new ArrayList();
         userList.add(user);
         JSONArray jsonArray = new JSONArray(userList);
+        System.out.println("获取用户信息:"+jsonArray.toString());
+        System.out.println("调用接口获取用户信息:"+resultJson.toString());
 
         Assert.assertEquals(jsonArray,resultJson);
     }
@@ -52,10 +55,11 @@ public class GetUserInfoTest {
 
         String result;
         HttpResponse response = TestConfig.defaultHttpClient.execute(post);
-        result = EntityUtils.toString(response.getEntity(),"Utf-8");
+        result = EntityUtils.toString(response.getEntity(),"utf-8");
 
         List resultList = Arrays.asList(result);
         JSONArray array = new JSONArray(resultList);
+        System.out.println(array);
 
         return array;
     }

@@ -39,6 +39,7 @@ public class LoginTest {
         LoginCase loginCase = session.selectOne("loginCase",1);
         System.out.println(loginCase.toString());
         System.out.println(TestConfig.loginUrl);
+        System.out.println(loginCase.getExpected());
 
         //发送请求
         String result = getResult(loginCase);
@@ -56,6 +57,7 @@ public class LoginTest {
         System.out.println(loginCase.toString());
         System.out.println(TestConfig.loginUrl);
 
+
         //发送请求
         String result = getResult(loginCase);
         //验证结果
@@ -70,19 +72,20 @@ public class LoginTest {
         param.put("userName",loginCase.getUserName());
         param.put("password",loginCase.getPassword());
 
-        param.put("content-type","application/json");
+        post.setHeader("content-type","application/json");
 
-        StringEntity entity = new StringEntity(param.toString(),"UTF-8");
+        StringEntity entity = new StringEntity(param.toString(),"utf-8");
         post.setEntity(entity);
 
         String result;
         HttpResponse response = TestConfig.defaultHttpClient.execute(post);
-        result = EntityUtils.toString(response.getEntity(),"UTF-8");
-
+        result = EntityUtils.toString(response.getEntity(),"utf-8");
+        System.out.println(result);
         TestConfig.store = TestConfig.defaultHttpClient.getCookieStore();
 
 
         return result;
     }
+
 
 }

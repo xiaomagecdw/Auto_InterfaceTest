@@ -29,7 +29,7 @@
                     <include name="updateUserInfo"/>
                     <include name="deleteUserInfo"/>
                 </methods>
-            </class>
+            </class>-->
         </classes>
     </test>
     <listeners>

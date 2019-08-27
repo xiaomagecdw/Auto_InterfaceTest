@@ -11,6 +11,6 @@ public class UpdateUserInfoCase {
     private String sex;
     private String age;
     private String permission;
-    private String isDelete;
+    private String isDeleted;
     private String expected;
 }
