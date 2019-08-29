@@ -16,14 +16,14 @@
             </class>
             <class name="com.course.cases.GetUserInfoTest">
                 <methods>
-                    <include name="getUserListInfo"/>
+                    <include name="getUserInfo"/>
                 </methods>
             </class>
             <class name="com.course.cases.GetUserListTest">
                 <methods>
                     <include name="getUserList"/>
                 </methods>
-            </class>
+            </class>-->
             <class name="com.course.cases.UpdateUserInfoTest">
                 <methods>
                     <include name="updateUserInfo"/>

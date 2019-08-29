@@ -26,7 +26,6 @@
         select * from updateuserinfocase where id=#{id}
     </select>
 
-
     <select id="addUser" parameterType="com.course.model.AddUserCase" resultType="com.course.model.User">
         select * from user where
         userName=#{userName}
@@ -36,23 +35,27 @@
         and permission=#{permission}
         and isDeleted=#{isDeleted}
     </select>
+
+    
     <!--获取用户信息-->
     <select id="getUserInfo" parameterType="com.course.model.GetUserInfoCase" resultType="com.course.model.User">
         select * from user where id=#{userId}
     </select>
+
     <!--获取用户列表-->
     <select id="getUserList" parameterType="com.course.model.GetUserListCase" resultType="com.course.model.User">
         select * from  user
         <trim prefix="where" prefixOverrides="and">
             <if test="null != userName and '' != userName">
-            and userName=${userName}
+                and userName=#{userName}
             </if>
             <if test="null != age and '' != age">
-                and age=${age}
+                and age=#{age}
             </if>
             <if test="null != sex and '' != sex">
-                and sex=${sex}
+                and sex=#{sex}
             </if>
+
         </trim>
         ;
     </select>
