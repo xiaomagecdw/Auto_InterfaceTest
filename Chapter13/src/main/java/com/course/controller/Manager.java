@@ -55,6 +55,7 @@ public class Manager {
         }
     }
 
+
     @ApiOperation(value = "添加用户接口",httpMethod = "POST")
     @RequestMapping(value = "/addUser",method = RequestMethod.POST)
     public boolean addUser(HttpServletRequest request,@RequestBody User user){

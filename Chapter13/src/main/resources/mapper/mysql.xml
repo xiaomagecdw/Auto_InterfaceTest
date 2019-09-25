@@ -14,8 +14,8 @@
     <!--添加用户接口sql-->
     <insert id="addUser" parameterType="com.course.model.User">
         insert into
-        user (userName,password,age,sex,permission,isDelete)
-        values (#{userName},#{password},#{age},#{sex},#{permission},#{isDelete});
+        user (userName,password,age,sex,permission,isDeleted)
+        values (#{userName},#{password},#{age},#{sex},#{permission},#{isDeleted});
     </insert>
 
     <!--获取用户信息sql-->
@@ -42,8 +42,8 @@
             <if test="null != permission and '' != permission">
                 and permission=#{permission}
             </if>
-            <if test="null != isDelete and '' != isDelete">
-                and isDelete=#{isDelete}
+            <if test="null != isDeleted and '' != isDeleted">
+                and isDeleted=#{isDeleted}
             </if>
         </trim>
     </select>
@@ -67,8 +67,8 @@
             <if test="null != permission and '' != permission">
                 permission=#{permission},
             </if>
-            <if test="null != isDelete and '' != isDelete">
-                isDelete=#{isDelete},
+            <if test="null != isDeleted and '' != isDeleted">
+                isDeleted=#{isDeleted},
             </if>
         </trim>
         where id=#{id}

@@ -1,0 +1,5 @@
+com\course\controller\MyGetMethod.class
+com\course\config\SwaggerConfig.class
+com\course\controller\Manager.class
+com\course\Application.class
+com\course\model\User.class
