@@ -17,7 +17,6 @@
                     <target>8</target>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -39,9 +38,9 @@
                     <source>1.8</source>
                     <target>1.8</target>
                     <encoding>UTF-8</encoding>
-                    <compilerArgs>
+                    <compilerArguments>
                         <extdirs>${project.basedir}/lib</extdirs>
-                    </compilerArgs>
+                    </compilerArguments>
                 </configuration>
             </plugin>
         </plugins>
